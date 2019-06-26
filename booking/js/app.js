@@ -26,8 +26,8 @@ class Places {
   }
 
   draw() {
-    const placeList = document.querySelector(".places-row");
-    for (let i = 1; i < 41; i++) {
+    const placeList = document.querySelector(".places-container");
+    for (let i = 1; i < 37; i++) {
       const placeItem = createElement(
         "button",
         { className: "place-item" },
@@ -42,9 +42,11 @@ class Places {
     const onClick = el => {
       el.disabled = true;
       this.places.push(el);
-      const total = document.querySelector(".booking-price");
+      const price = document.querySelector(".places-price");
+      const palces = document.querySelector(".places-places");
       const sum = this.places.length * this.price;
-      total.innerHTML = `Стоимость: ${sum} рублей`;
+      price.innerHTML = `Стоимость: ${sum} рублей`;
+      palces.innerHTML = `Количество выбранных мест: ${this.places.length}`;
     };
 
     place.forEach(item => {

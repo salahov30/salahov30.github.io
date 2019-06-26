@@ -35,7 +35,7 @@ button:disabled:hover {
   justify-content: center;
 }
 
-.places-row {
+.places-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -83,7 +83,9 @@ button:disabled:hover {
   background-color: #056705;
 }
 
-.booking-price {
+.places-price,
+.places-places {
   margin-top: 35px;
+  font-size: 18px;
   text-align: center;
 }
