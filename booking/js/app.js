@@ -21,13 +21,14 @@ const createElement = (tag, props, ...children) => {
 
 class Places {
   constructor() {
-    this.price = 120;
+    this.price = 100;
     this.places = [];
+    this.placeNums = [];
   }
 
   draw() {
     const placeList = document.querySelector(".places-container");
-    for (let i = 1; i < 37; i++) {
+    for (let i = 1; i < 45; i++) {
       const placeItem = createElement(
         "button",
         { className: "place-item" },
@@ -42,10 +43,15 @@ class Places {
     const onClick = el => {
       el.disabled = true;
       this.places.push(el);
+      this.placeNums.push(el.firstChild.data);
+
       const price = document.querySelector(".places-price");
-      const palces = document.querySelector(".places-places");
+      const palces = document.querySelector(".places-quantity");
+      const placeNum = document.querySelector(".places-number");
       const sum = this.places.length * this.price;
+
       price.innerHTML = `Стоимость: ${sum} рублей`;
+      placeNum.innerHTML = `Место: ${this.placeNums}`;
       palces.innerHTML = `Количество выбранных мест: ${this.places.length}`;
     };
 

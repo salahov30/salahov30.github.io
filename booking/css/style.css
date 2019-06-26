@@ -84,7 +84,8 @@ button:disabled:hover {
 }
 
 .places-price,
-.places-places {
+.places-quantity,
+.places-number {
   margin-top: 35px;
   font-size: 18px;
   text-align: center;
