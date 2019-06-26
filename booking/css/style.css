@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #F89406;
+  cursor: not-allowed;
+  box-shadow: inset 0px -5px 2px 0px rgb(185, 115, 13)
+}
+
+button:disabled:hover {
+  background-color: #F89406;
+  box-shadow: inset 0px -5px 2px 0px rgb(185, 115, 13)
+}
+
+.booking {
+  max-width: 500px;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.places-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.place-item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  background-color: #e8554e;
+  box-shadow: inset 0px -5px 2px 0px rgba(152, 6, 6, 0.51);
+  border: none;
+  border-radius: .2rem;
+  padding: 1rem;
+  margin: 1rem 1rem 0 0;
+}
+
+.place-item:hover {
+  background-color: #cf4c45;
+}
+
+.booking-controls {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-records {
+  background-color: green;
+  box-shadow: inset 0px -6px 2px 0px rgb(39, 101, 5);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.btn-records:hover {
+  background-color: #056705;
+}
+
+.booking-price {
+  margin-top: 35px;
+  text-align: center;
+}
