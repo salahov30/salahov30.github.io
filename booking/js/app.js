@@ -20,15 +20,16 @@ const createElement = (tag, props, ...children) => {
 };
 
 class Places {
-  constructor() {
-    this.price = 100;
-    this.places = [];
-    this.placeNums = [];
+  constructor(price, quantity, max) {
+    this.selectPlaces = [];
+    this.pricePlace = price;
+    this.quantityPlace = quantity;
+    this.maxQuantitySelectPlaces = max;
   }
 
   draw() {
     const placeList = document.querySelector(".places-container");
-    for (let i = 1; i < 45; i++) {
+    for (let i = 1; i < this.quantityPlace + 1; i++) {
       const placeItem = createElement(
         "button",
         { className: "place-item" },
@@ -39,23 +40,38 @@ class Places {
   }
 
   select() {
-    const place = document.querySelectorAll(".place-item");
-    const onClick = el => {
-      el.disabled = true;
-      this.places.push(el);
-      this.placeNums.push(el.firstChild.data);
+    const placeItem = document.querySelectorAll(".place-item");
+    const palcesQuantity = document.querySelector(".places-quantity");
+    const totalPrice = document.querySelector(".places-price");
+    const priceTicket = document.querySelector(".price-ticket");
 
-      const price = document.querySelector(".places-price");
-      const palces = document.querySelector(".places-quantity");
-      const placeNum = document.querySelector(".places-number");
-      const sum = this.places.length * this.price;
+    palcesQuantity.style.display = "none";
+    totalPrice.style.display = "none";
+    priceTicket.innerHTML = `Цена билета ${this.pricePlace} р.`;
 
-      price.innerHTML = `Стоимость: ${sum} рублей`;
-      placeNum.innerHTML = `Место: ${this.placeNums}`;
-      palces.innerHTML = `Количество выбранных мест: ${this.places.length}`;
+    const onClick = item => {
+      palcesQuantity.style.display = "block";
+      totalPrice.style.display = "block";
+      if (this.selectPlaces.length < this.maxQuantitySelectPlaces) {
+        if (item.className === "place-item") {
+          item.classList.add("select");
+          this.selectPlaces.push(item);
+        } else {
+          item.classList.remove("select");
+          let index = this.selectPlaces.indexOf(item);
+          this.selectPlaces.splice(index, 1);
+        }
+
+        const amount = this.selectPlaces.length * this.pricePlace;
+
+        palcesQuantity.innerHTML = `Выбранно мест: ${this.selectPlaces.length}`;
+        totalPrice.innerHTML = `Итог: ${amount} р.`;
+      } else {
+        alert("Выбрано максимальное количество мест");
+      }
     };
 
-    place.forEach(item => {
+    placeItem.forEach(item => {
       item.addEventListener(
         "click",
         () => {
@@ -66,6 +82,7 @@ class Places {
     });
   }
 }
-const places = new Places();
+
+const places = new Places(120, 46, 6);
 places.draw();
 places.select();

@@ -12,20 +12,28 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
+button.select {
   background-color: #F89406;
-  cursor: not-allowed;
   box-shadow: inset 0px -5px 2px 0px rgb(185, 115, 13)
 }
 
-button:disabled:hover {
+button.select:hover {
   background-color: #F89406;
   box-shadow: inset 0px -5px 2px 0px rgb(185, 115, 13)
+}
+
+.container {
+  padding: 0 45px;
 }
 
 .booking {
+  display: grid;
+  grid-template-columns: 1fr 200px
+}
+
+.grid-places {
   max-width: 500px;
-  margin: 2rem auto;
+  margin: 25px auto;
   font-size: 1.4rem;
 }
 
@@ -40,7 +48,6 @@ button:disabled:hover {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0.5rem;
 }
 
 .place-item {
@@ -55,7 +62,7 @@ button:disabled:hover {
   border: none;
   border-radius: .2rem;
   padding: 1rem;
-  margin: 1rem 1rem 0 0;
+  margin: 0 1rem 1rem 0;
 }
 
 .place-item:hover {
@@ -83,10 +90,64 @@ button:disabled:hover {
   background-color: #056705;
 }
 
-.places-price,
-.places-quantity,
-.places-number {
-  margin-top: 35px;
-  font-size: 18px;
-  text-align: center;
+.order-info {
+  padding-top: 25px;
+}
+
+.order-info .section-content {
+  background-color: #cce5ff;
+  border-radius: 5px;
+  border: 1px solid #b8daff;
+  color: #004085;
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.section-content {
+  list-style-type: none;
+}
+
+.section-content .price-item {
+  padding: 10px 0;
+}
+
+.section-content .places-price {
+  font-weight: 600;
+}
+
+.section-content .places-price,
+.places-quantity {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate2d(0, 0, 0)
+  }
+
+  to {
+    transform: translate2d(0, 40px, 0);
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate2d(0, 0, 0)
+  }
+
+  to {
+    transform: translate2d(0, 40px, 0);
+    opacity: 1
+  }
 }

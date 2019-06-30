@@ -8,17 +8,25 @@
     <title>Бронирование</title>
   </head>
   <body>
-    <section class="booking">
-      <div class="section-content">
-        <div class="places-container"></div>
-        <div class="booking-controls">
-          <button class="btn-records">Забронировать</button>
-        </div>
-      </div>
-    </section>
-    <div class="places-number"></div>
-    <div class="places-price"></div>
-    <div class="places-quantity"></div>
+    <div class="container">
+      <section class="booking">
+        <section class="grid-places">
+          <div class="section-content">
+            <div class="places-container"></div>
+            <div class="booking-controls">
+              <button class="btn-records">Забронировать</button>
+            </div>
+          </div>
+        </section>
+        <section class="order-info">
+          <ul class="section-content">
+            <li class="price-item price-ticket">Цена билета:</li>
+            <li class="price-item places-quantity"></li>
+            <li class="price-item places-price"></li>
+          </ul>
+        </section>
+      </section>
+    </div>
     <script src="js/app.js"></script>
   </body>
 </html>
