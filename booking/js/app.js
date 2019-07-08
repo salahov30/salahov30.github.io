@@ -47,7 +47,7 @@ class Places {
 
     palcesQuantity.style.display = "none";
     totalPrice.style.display = "none";
-    priceTicket.innerHTML = `Цена билета ${this.pricePlace} р.`;
+    priceTicket.innerHTML = `Цена билета ${this.pricePlace} руб.`;
 
     const onClick = item => {
       palcesQuantity.style.display = "block";
@@ -65,7 +65,7 @@ class Places {
         const amount = this.selectPlaces.length * this.pricePlace;
 
         palcesQuantity.innerHTML = `Выбранно мест: ${this.selectPlaces.length}`;
-        totalPrice.innerHTML = `Итог: ${amount} р.`;
+        totalPrice.innerHTML = `Итог: ${amount} руб.`;
       } else {
         alert("Выбрано максимальное количество мест");
       }
