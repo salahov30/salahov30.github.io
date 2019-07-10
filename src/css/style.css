@@ -83,3 +83,16 @@ article {
     list-style: none;
     display: inline-block;
 }
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    .main-wrapper {
+        margin: 0 25px;
+    }
+
+    .social-wrapper ul li {        
+        display: block;
+    }
+}
