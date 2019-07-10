@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Noticia+Text|Source+Code+Pro:300&display=swap');
+
+:root {
+    --bgc: #2c3e50;
+    --title: #e74c3c;
+    --text: #1abc9c;
+    --link: #f1c40f;
+    --link-hover: #f39c12;
+}
+
+::selection {
+    background-color: #8e44ad;
+}
+
+body {
+    background-color: var(--bgc);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    margin: 0;
+}
+
+h1 {
+    color: var(--title);
+    font-size: 4.5em;
+    font-family: 'Baloo', cursive;
+    letter-spacing: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 5px
+}
+
+p {
+    font-size: 1.8em;
+    color: var(--text);
+    margin: 3px 0;
+}
+
+a {
+    color: var(--link);
+}
+a:hover {
+    color: var(--link-hover)
+}
+
+article {
+    padding: 25px 0;
+}
+
+.main-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-wrapper {
+   font-size: 18px;
+   color: #9b59b6;
+}
+
+.social-wrapper h2 {
+    margin: 0 0 25px;
+}
+
+.social-wrapper ul {
+    margin: 0;
+    padding: 0;
+}
+
+.social-wrapper ul li {
+    list-style: none;
+    display: inline-block;
+}
